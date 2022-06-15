@@ -7,7 +7,23 @@
         mc:Ignorable="d"
         Title="WPF-Einführung" Height="450" Width="800">
     <Grid x:Name="grid">
-    <!--<Button FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click">
+        <TextBox x:Name="tbxEingabe" HorizontalAlignment="Left" Height="23" Margin="105,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" KeyDown="tbxEingabe_KeyDown" TextChanged="tbxEingabe_TextChanged"/>
+        <Label x:Name="lbl" Content="Eingabe:" HorizontalAlignment="Left" Margin="50,53,0,0" VerticalAlignment="Top" Width="55" Height="26"/>
+        <Button x:Name="btnLZ" Content="Leerzeichen entfernen" HorizontalAlignment="Left" Margin="105,84,0,0" VerticalAlignment="Top" Width="120" Click="btnLZ_Click"/>
+        <TextBox x:Name="tbxAusgabe" HorizontalAlignment="Left" Height="23" Margin="105,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+        <Label x:Name="lbl2" Content="Ausgabe:" HorizontalAlignment="Left" Margin="45,108,0,0" VerticalAlignment="Top" Width="60" Height="26"/>
+        
+        <Label Content="Nullstellen von quadratischen Funktionen" HorizontalAlignment="Left" Margin="321,43,0,0" VerticalAlignment="Top" Width="229"/>
+        <Label Content="0=f(x)=ax^2+bx+c" HorizontalAlignment="Left" Margin="321,69,0,0" VerticalAlignment="Top" Width="112" />
+        <Label Content="a=" HorizontalAlignment="Left" Margin="323,92,0,0" VerticalAlignment="Top"/>
+        <Label Content="b=" HorizontalAlignment="Left" Margin="399,94,0,0" VerticalAlignment="Top"/>
+        <Label Content="c=" HorizontalAlignment="Left" Margin="476,94,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbxA" HorizontalAlignment="Left" Height="23" Margin="347,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"/>
+        <TextBox x:Name="tbxB" HorizontalAlignment="Left" Height="23" Margin="424,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"/>
+        <TextBox x:Name="tbxC" HorizontalAlignment="Left" Height="23" Margin="500,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"/>
+        <TextBox x:Name="tbxNst" HorizontalAlignment="Left" Height="50" Margin="323,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217"/>
+        <Button Content="Berechnen" HorizontalAlignment="Left" Margin="438,72,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click_1"/>
+        <!--<Button FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click">
         <Button.Content>
             <WrapPanel>
                 <TextBlock Foreground="Red" Text="Multi"/>

@@ -81,5 +81,60 @@ namespace WPF_Einführung
                         )
                     );
         }
+
+        private void btnLZ_Click(object sender, RoutedEventArgs e)
+        {
+            LeerzeichenEntfernen();
+        }
+
+        private void LeerzeichenEntfernen()
+        {
+            string eingabe = tbxEingabe.Text;
+            string ausgabe = eingabe.Replace(" ", "");
+            tbxAusgabe.Text = ausgabe;
+        }
+
+        private void tbxEingabe_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key==Key.Enter) LeerzeichenEntfernen();
+        }
+
+        private void tbxEingabe_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            LeerzeichenEntfernen();
+        }
+
+        //Aufgabe
+        //Erstellen Sie Eingabelogik, Methoden und Ausgabe zur
+        //Nullstellenbestimmung quadratischer Funktionen (in R).
+
+        private void Berechnen()
+        {
+            double a, b, c, p, q, D;
+            if(!Double.TryParse(tbxA.Text, out a)) return;
+            if(!Double.TryParse(tbxB.Text, out b)) return;
+            if(!Double.TryParse(tbxC.Text, out c)) return;
+            p = b / a;
+            q = c / a;
+            D = p * p / 2 - q;
+            if (D < 0) tbxNst.Text = $"Es existieren keine reellen Nullstellen.";
+            else if (D == 0)
+            {
+                double xn = -p * p / 2;
+                tbxNst.Text = $"Die doppelte Nullstelle von f ist x_n={xn}.";
+            }
+            else
+            {
+                double x1, x2;
+                x1 = -p * p / 2 + Math.Sqrt(D);
+                x2 = -p * p / 2 - Math.Sqrt(D);
+                tbxNst.Text = $"Die Nullstellen sind x1={x1} und x2={x2}.";
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Berechnen();
+        }
     }
 }
