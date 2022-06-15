@@ -116,7 +116,7 @@ namespace WPF_Einführung
             if(!Double.TryParse(tbxC.Text, out c)) return;
             p = b / a;
             q = c / a;
-            D = p * p / 2 - q;
+            D = p * p / 2 - q;//sh
             if (D < 0) tbxNst.Text = $"Es existieren keine reellen Nullstellen.";
             else if (D == 0)
             {
